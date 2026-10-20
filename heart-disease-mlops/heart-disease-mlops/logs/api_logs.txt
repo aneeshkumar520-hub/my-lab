@@ -1,0 +1,5 @@
+$ tail -n 4 logs/api.log
+{"ts": "2026-10-18T20:09:04+0000", "level": "INFO", "logger": "heart.api", "msg": "prediction", "request_id": "0439fffbe40e", "prediction": 1, "confidence": 0.9155, "model_version": "1.0.0-202610181958"}
+{"ts": "2026-10-18T20:09:04+0000", "level": "INFO", "logger": "heart.api", "msg": "request", "request_id": "0439fffbe40e", "method": "POST", "path": "/predict", "status": 200, "latency_ms": 10.6, "client":
+{"ts": "2026-10-18T20:09:04+0000", "level": "INFO", "logger": "heart.api", "msg": "prediction", "request_id": "5165d5425ab3", "prediction": 0, "confidence": 0.7907, "model_version": "1.0.0-202610181958"}
+{"ts": "2026-10-18T20:09:04+0000", "level": "INFO", "logger": "heart.api", "msg": "request", "request_id": "5165d5425ab3", "method": "POST", "path": "/predict", "status": 200, "latency_ms": 9.3, "client": 

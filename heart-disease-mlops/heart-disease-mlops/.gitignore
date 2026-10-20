@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.venv/
+mlruns/
+mlartifacts/
+.ipynb_checkpoints/
+logs/*.log
+logs/uvicorn.out

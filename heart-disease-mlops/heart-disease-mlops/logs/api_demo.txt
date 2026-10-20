@@ -1,0 +1,12 @@
+$ curl -s http://localhost:8000/health
+{"status":"ok","model_version":"1.0.0-202610181958"}
+
+$ curl -s -X POST http://localhost:8000/predict -d @high_risk.json
+{"prediction":1,"label":"heart disease","confidence":0.989,"probability_disease":0.989,"model_version":"1.0.0-202610181958"}
+
+$ curl -s -X POST http://localhost:8000/predict -d @low_risk_no_ca_thal.json
+{"prediction":0,"label":"no heart disease","confidence":0.9756,"probability_disease":0.0244,"model_version":"1.0.0-202610181958"}
+
+$ curl -s -w 'HTTP %{http_code}' -X POST http://localhost:8000/predict -d @invalid_age_minus3.json
+{"detail":[{"type":"greater_than_equal","loc":["body","age"],"msg":"Input should be greater than or equal to 1","input":-3,"ctx":{"ge":1.0}}]}
+HTTP 422

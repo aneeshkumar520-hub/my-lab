@@ -1,0 +1,2 @@
+$ flake8 src tests scripts && echo "flake8: no issues"
+flake8: no issues

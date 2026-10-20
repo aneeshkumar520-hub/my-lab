@@ -1,0 +1,17 @@
+### installed OK
+Python 3.12.3
+OK  downloaded 303 rows from https://raw.githubusercontent.com/sharmaroshan/Heart-UCI-Dataset/master/heart.csv
+INFO:__main__:dropped 1 duplicate rows
+INFO:__main__:saved 302 rows to /tmp/clean/data/processed/heart_clean.csv
+(302, 14) missing cells: 6
+2026-10-18 20:07:09,387 INFO == logistic_regression
+2026-10-18 20:07:10,644 INFO    nested CV ROC-AUC 0.905 | test ROC-AUC 0.918 | test acc 0.836
+2026-10-18 20:07:14,354 INFO == random_forest
+2026-10-18 20:07:18,026 INFO    nested CV ROC-AUC 0.907 | test ROC-AUC 0.891 | test acc 0.787
+2026-10-18 20:07:21,082 INFO best model: logistic_regression
+2026-10-18 20:07:21,322 INFO saved model -> /tmp/clean/models/heart_pipeline.joblib
+    artists = ax.bxp(**boxplot_kws)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+38 passed, 11 warnings in 22.52s
+### CLEAN-SETUP RUN COMPLETE

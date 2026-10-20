@@ -1,0 +1,8 @@
+$ python -c "mlflow.search_runs(...)"   # experiment: heart-disease-risk
+                     run  cv_roc_auc_mean  cv_accuracy_mean  cv_recall_mean  test_roc_auc  test_accuracy  test_recall
+training-20261018-195635                -                 -               -             -              -            -
+     logistic_regression            0.907             0.846           0.809         0.918          0.836        0.786
+           random_forest            0.910             0.830           0.791         0.894          0.787        0.679
+       gradient_boosting            0.900             0.830           0.809         0.879          0.770        0.643
+
+registered model versions: [('heart-disease-classifier', 1)]

@@ -1,0 +1,15 @@
+$ pytest --cov=src/heart -q
+......................................                                   [100%]
+Name                    Stmts   Miss  Cover
+-------------------------------------------
+src/heart/__init__.py       1      0   100%
+src/heart/api.py          120      7    94%
+src/heart/config.py        19      0   100%
+src/heart/data.py          38      3    92%
+src/heart/eda.py           84      2    98%
+src/heart/features.py      28      1    96%
+src/heart/predict.py       20      0   100%
+src/heart/train.py        211    103    51%
+-------------------------------------------
+TOTAL                     521    116    78%
+38 passed, 11 warnings in 41.83s

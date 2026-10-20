@@ -1,0 +1,9 @@
+$ curl -s localhost:8000/metrics | grep -E "^(api_requests_total|predictions_total|model_info|api_request_latency_seconds_count)"
+api_requests_total{endpoint="/health",method="GET",status="200"} 2.0
+api_requests_total{endpoint="/predict",method="POST",status="200"} 42.0
+api_requests_total{endpoint="/predict",method="POST",status="422"} 1.0
+api_request_latency_seconds_count{endpoint="/health"} 2.0
+api_request_latency_seconds_count{endpoint="/predict"} 43.0
+predictions_total{label="heart disease"} 15.0
+predictions_total{label="no heart disease"} 27.0
+model_info{model_name="logistic_regression",model_version="1.0.0-202610181958"} 1.0

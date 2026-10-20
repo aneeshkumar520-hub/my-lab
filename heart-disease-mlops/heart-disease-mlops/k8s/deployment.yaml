@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: heart-api
+  namespace: heart-api
+  labels: {app: heart-api}
+spec:
+  replicas: 2
+  selector:
+    matchLabels: {app: heart-api}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: {maxUnavailable: 0, maxSurge: 1}
+  template:
+    metadata:
+      labels: {app: heart-api}
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: /metrics
+        prometheus.io/port: "8000"
+    spec:
+      containers:
+        - name: api
+          # Minikube/Docker Desktop: build locally (image is found because pullPolicy=IfNotPresent).
+          # Cloud: push to a registry, e.g. ghcr.io/<user>/heart-disease-api:1.0.0, and change this line.
+          image: heart-disease-api:1.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+          env:
+            - {name: LOG_LEVEL, value: INFO}
+          readinessProbe:
+            httpGet: {path: /health, port: 8000}
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          livenessProbe:
+            httpGet: {path: /health, port: 8000}
+            initialDelaySeconds: 15
+            periodSeconds: 10
+          resources:
+            requests: {cpu: 100m, memory: 256Mi}
+            limits: {cpu: 500m, memory: 512Mi}
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            runAsUser: 10001
